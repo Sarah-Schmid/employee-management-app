@@ -30,9 +30,10 @@ function EditEmployee(props) {
             onSubmit={(e) => {
               handleClose();
               e.preventDefault();
-              console.log("hello from edit employee");
-              console.log(props.id, name, role);
               props.updateEmployee(props.id, name, role);
+              fetch("http://localhost:8000/employees/" + props.id, {
+                method: "PUT",
+              });
             }}
             id="edit-modal"
             className="w-full max-w-sm"

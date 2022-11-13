@@ -34,6 +34,11 @@ function AddEmployee(props) {
               setRole("");
               setImg("");
               props.newEmployee(name, role, img);
+              fetch("http://localhost:8000/employees", {
+                method: "POST",
+              }).then(() => {
+                console.log("new employee added");
+              });
             }}
             id="add-modal"
             className="w-full max-w-sm"
