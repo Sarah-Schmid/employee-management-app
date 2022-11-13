@@ -3,10 +3,12 @@ import Employee from "./components/employee";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AddEmployee from "./components/add-employee";
+import newEmployee from "./components/add-employee";
 
 function App() {
   const [employees, setEmployees] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   function updateEmployee(id, newName, newRole) {
     const updatedEmployees = employees.map((employee) => {
@@ -29,14 +31,26 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:8000/employees")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setEmployees(data);
-        setIsLoading(false);
-      });
+    setTimeout(() => {
+      fetch("http://localhost:8000/employees")
+        .then((res) => {
+          if (!res.ok) {
+            // error coming back from server
+            throw Error("could not fetch the data for that resource");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setIsLoading(false);
+          setEmployees(data);
+          setError(null);
+        })
+        .catch((err) => {
+          // auto catches network / connection error
+          setIsLoading(false);
+          setError(err.message);
+        });
+    }, 600);
   }, []);
 
   const showEmployees = true;

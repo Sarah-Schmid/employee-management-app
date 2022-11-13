@@ -12,6 +12,20 @@ function EditEmployee(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  /* FROM APP.JS 
+  =====================
+  function updateEmployee(id, newName, newRole) {
+    const updatedEmployees = employees.map((employee) => {
+      if (id == employee.id) {
+        return { ...employee, name: newName, role: newRole };
+      }
+      return employee;
+    });
+    setEmployees(updatedEmployees);
+  }
+  ===================
+  */
+
   return (
     <>
       <button
@@ -30,9 +44,18 @@ function EditEmployee(props) {
             onSubmit={(e) => {
               handleClose();
               e.preventDefault();
+
               props.updateEmployee(props.id, name, role);
+              const updateEmployee = {
+                name: name,
+                role: role,
+              };
               fetch("http://localhost:8000/employees/" + props.id, {
                 method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updateEmployee),
+              }).then(() => {
+                console.log("new employee edited");
               });
             }}
             id="edit-modal"

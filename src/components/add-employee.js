@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { propTypes } from "react-bootstrap/esm/Image";
 import Modal from "react-bootstrap/Modal";
+import { v4 as uuidv4 } from "uuid";
 
 function AddEmployee(props) {
   const [name, setName] = useState("");
@@ -34,8 +35,16 @@ function AddEmployee(props) {
               setRole("");
               setImg("");
               props.newEmployee(name, role, img);
+              const newEmployee = {
+                id: uuidv4(),
+                name: name,
+                role: role,
+                img: img,
+              };
               fetch("http://localhost:8000/employees", {
                 method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newEmployee),
               }).then(() => {
                 console.log("new employee added");
               });
