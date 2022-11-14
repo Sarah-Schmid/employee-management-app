@@ -1,10 +1,10 @@
 {
   "employees": [
     {
-      "id": 6,
-      "name": "Mike",
+      "name": "Mikey",
       "role": "Product Manager",
-      "img": "https://images.pexels.com/photos/3625610/pexels-photo-3625610.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "img": "https://images.pexels.com/photos/3625610/pexels-photo-3625610.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "id": 6
     },
     {
       "name": "Devin",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Jamey ",
-      "role": "Dev",
+      "role": "DevOps Lead",
       "img": "https://images.pexels.com/photos/11077599/pexels-photo-11077599.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "id": "f59aa118-8c9b-4674-8f58-1ca1c5e1b1e2"
     }
