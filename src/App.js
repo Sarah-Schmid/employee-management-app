@@ -10,10 +10,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  function updateEmployee(id, newName, newRole) {
+  function updateEmployee(id, newName, newRole, newImg) {
     const updatedEmployees = employees.map((employee) => {
       if (id == employee.id) {
-        return { ...employee, name: newName, role: newRole };
+        return { ...employee, name: newName, role: newRole, img: newImg };
       }
       return employee;
     });

@@ -29,6 +29,7 @@ function Employee(props) {
             id={props.id}
             name={props.name}
             role={props.role}
+            img={props.img}
             updateEmployee={props.updateEmployee}
           />
           <button
