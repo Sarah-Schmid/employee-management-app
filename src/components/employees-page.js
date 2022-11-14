@@ -54,7 +54,7 @@ function EmployeesPage() {
 
   const showEmployees = true;
   return (
-    <div className="App">
+    <div className="employees-list">
       {showEmployees ? (
         <div>
           {isLoading && <div>Loading...</div>}
