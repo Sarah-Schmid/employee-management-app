@@ -53,7 +53,7 @@ function EditEmployee(props) {
                 img: img,
               };
               fetch(
-                "https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees" +
+                "https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees/" +
                   props.id,
                 {
                   method: "PUT",
