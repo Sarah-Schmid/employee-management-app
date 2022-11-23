@@ -2,9 +2,12 @@ import EditEmployee from "./edit-employee";
 
 function Employee(props) {
   const handleDelete = () => {
-    fetch("http://localhost:8000/employees/" + props.id, {
-      method: "DELETE",
-    });
+    fetch(
+      "https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees" + props.id,
+      {
+        method: "DELETE",
+      }
+    );
   };
 
   return (

@@ -52,11 +52,15 @@ function EditEmployee(props) {
                 role: role,
                 img: img,
               };
-              fetch("http://localhost:8000/employees/" + props.id, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(updateEmployee),
-              }).then(() => {
+              fetch(
+                "https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees" +
+                  props.id,
+                {
+                  method: "PUT",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(updateEmployee),
+                }
+              ).then(() => {
                 console.log("new employee edited");
               });
             }}

@@ -41,11 +41,14 @@ function AddEmployee(props) {
                 role: role,
                 img: img,
               };
-              fetch("http://localhost:8000/employees", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(newEmployee),
-              }).then(() => {
+              fetch(
+                "https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees",
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(newEmployee),
+                }
+              ).then(() => {
                 console.log("new employee added");
               });
             }}

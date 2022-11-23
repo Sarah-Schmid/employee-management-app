@@ -31,7 +31,7 @@ function EmployeesPage() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("http://localhost:8000/employees")
+      fetch("https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees")
         .then((res) => {
           if (!res.ok) {
             // error coming back from server
