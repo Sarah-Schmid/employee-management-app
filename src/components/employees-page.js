@@ -53,7 +53,7 @@ function EmployeesPage() {
   const showEmployees = true;
   return (
     <>
-      <h1 className="page-title">Employees</h1>
+      <h1 className="page-title text-purple-700">Employees</h1>
 
       <div className="employees-list">
         {showEmployees ? (

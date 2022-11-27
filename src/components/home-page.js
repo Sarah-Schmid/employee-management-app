@@ -4,7 +4,7 @@ import "../index.css";
 function HomePage() {
   return (
     <>
-      <h1 className="center text-purple-500 mt-8">
+      <h1 className="center text-purple-700 mt-8">
         Welcome to Your Dashboard
         <span className="wave m-2">👋</span>
       </h1>

@@ -63,10 +63,10 @@ function Scheduler() {
 
   return (
     <div className="Calendar">
-      <h1 className="page-title">Time Off Calendar</h1>
+      <h1 className="page-title text-purple-700">Time Off Calendar</h1>
       <div id="new-event-form">
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs">
-          <h2>Add New Event</h2>
+          <h4 className="text-purple-500">Add New Event</h4>
           <div class="mb-2">
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
