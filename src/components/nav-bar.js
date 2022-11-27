@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container className="flex justify-between">
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/home">
           <img
             className="max-w-[30%]"
             src="https://www.veryicon.com/download/png/healthcate-medical/basic-linear-icon-library/user-staff?s=256"
@@ -17,14 +17,14 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="flex justify-end" id="basic-navbar-nav">
           <Nav className="justify-end">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/home">
               Home
             </Link>
             <Link className="nav-link" to="/employees">
               Employees
             </Link>
-            <Link className="nav-link" to="/schedule">
-              Schedule
+            <Link className="nav-link" to="/calendar">
+              Time Off Calendar
             </Link>
           </Nav>
         </Navbar.Collapse>
