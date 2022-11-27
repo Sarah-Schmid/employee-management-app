@@ -2,7 +2,7 @@
   "employees": [
     {
       "name": "Mikey",
-      "role": "Product Manager",
+      "role": "Lead Product Manager",
       "img": "https://images.pexels.com/photos/3625610/pexels-photo-3625610.jpeg?auto=compress&cs=tinysrgb&w=600",
       "id": 6
     },
@@ -14,9 +14,15 @@
     },
     {
       "name": "Jamey ",
-      "role": "DevOps Lead",
+      "role": "DevOps Leader",
       "img": "https://images.pexels.com/photos/11077599/pexels-photo-11077599.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "id": "f59aa118-8c9b-4674-8f58-1ca1c5e1b1e2"
+    },
+    {
+      "id": "4ca91b8e-4777-470b-9bf5-455300d1ada3",
+      "name": "Ellie",
+      "role": "Nurse",
+      "img": "https://images.pexels.com/photos/3813342/pexels-photo-3813342.jpeg?auto=compress&cs=tinysrgb&w=1600"
     }
   ]
 }

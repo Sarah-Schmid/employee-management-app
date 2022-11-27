@@ -30,31 +30,29 @@ function EmployeesPage() {
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch("http://localhost:8000/employees")
-        .then((res) => {
-          if (!res.ok) {
-            // error coming back from server
-            throw Error("could not fetch the data for that resource");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setIsLoading(false);
-          setEmployees(data);
-          setError(null);
-        })
-        .catch((err) => {
-          // auto catches network / connection error
-          setIsLoading(false);
-          setError(err.message);
-        });
-    }, 600);
+    fetch("https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/employees")
+      .then((res) => {
+        if (!res.ok) {
+          // error coming back from server
+          throw Error("could not fetch the data for that resource");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setIsLoading(false);
+        setEmployees(data);
+        setError(null);
+      })
+      .catch((err) => {
+        // auto catches network / connection error
+        setIsLoading(false);
+        setError(err.message);
+      });
   }, []);
 
   const showEmployees = true;
   return (
-    <div className="App">
+    <div className="employees-list">
       {showEmployees ? (
         <div>
           {isLoading && <div>Loading...</div>}
