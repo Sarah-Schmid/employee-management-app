@@ -43,6 +43,11 @@ code {
   justify-content: center;
 }
 
+.btn-close{color: #fff;}
+
+.react-datepicker__header {
+  background-color: #e9d5ff !important;}
+
 .wave {
   animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
   animation-duration: 2.5s;        /* Change to speed up or slow down */
