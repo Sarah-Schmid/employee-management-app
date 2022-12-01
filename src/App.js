@@ -3,10 +3,8 @@ import EmployeesPage from "./components/employees-page";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/nav-bar";
 import HomePage from "./components/home-page";
-
 import Scheduler from "./components/calendar";
 import "./App.css";
-
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import React from "react";
 
