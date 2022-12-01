@@ -30,18 +30,15 @@ function Scheduler(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //display dates on calendar UI
-  function displayOnCalendar() {
-    for (let i = 0; i < allEvents.length; i++) {
-      const d1 = new Date(allEvents[i].start);
-      const d2 = new Date(newEvent.start);
-      const d3 = new Date(allEvents[i].end);
-      const d4 = new Date(newEvent.end);
-    }
-
-    setAllEvents([...allEvents, newEvent]);
-    /*
+  useEffect(() => {
     fetch("https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/calendar-data")
+      .then((res) => {
+        if (!res.ok) {
+          // error coming back from server
+          throw Error("could not fetch the data for that resource");
+        }
+        return res.json();
+      })
       .then((data) => {
         setAllEvents(data);
       })
@@ -49,8 +46,7 @@ function Scheduler(props) {
         // auto catches network / connection error
         console.log("error");
       });
-*/
-  }
+  }, []);
 
   return (
     <div className="Calendar">
@@ -74,7 +70,7 @@ function Scheduler(props) {
               handleClose();
               e.preventDefault();
 
-              displayOnCalendar();
+              setAllEvents([...allEvents, newEvent]);
 
               fetch(
                 "https://63545c47ccce2f8c0207b3d7.mockapi.io/api/v1/calendar-data",
