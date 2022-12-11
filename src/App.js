@@ -3,7 +3,10 @@ import EmployeesPage from "./components/employees-page";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/nav-bar";
 import HomePage from "./components/home-page";
-import SchedulePage from "./components/schedule-page";
+import Scheduler from "./components/calendar";
+import "./App.css";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import React from "react";
 
 function App() {
   return (
@@ -15,11 +18,11 @@ function App() {
             <Route path="/employees">
               <EmployeesPage />
             </Route>
-            <Route path="/">
+            <Route path="/home">
               <HomePage />
             </Route>
-            <Route path="/schedule">
-              <SchedulePage />
+            <Route path="/calendar">
+              <Scheduler />
             </Route>
           </Switch>
         </div>

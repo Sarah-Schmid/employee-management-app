@@ -52,32 +52,36 @@ function EmployeesPage() {
 
   const showEmployees = true;
   return (
-    <div className="employees-list">
-      {showEmployees ? (
-        <div>
-          {isLoading && <div>Loading...</div>}
-          {employees && (
-            <div className="flex flex-wrap justify-center">
-              {employees.map((employee) => {
-                return (
-                  <Employee
-                    key={employee.id}
-                    id={employee.id}
-                    name={employee.name}
-                    role={employee.role}
-                    img={employee.img}
-                    updateEmployee={updateEmployee}
-                  />
-                );
-              })}
-            </div>
-          )}
-          <AddEmployee newEmployee={newEmployee} />
-        </div>
-      ) : (
-        <p>You do not have access</p>
-      )}
-    </div>
+    <>
+      <h1 className="page-title text-purple-700">Employees</h1>
+
+      <div className="employees-list">
+        {showEmployees ? (
+          <div>
+            {isLoading && <div>Loading...</div>}
+            {employees && (
+              <div className="flex flex-wrap justify-center">
+                {employees.map((employee) => {
+                  return (
+                    <Employee
+                      key={employee.id}
+                      id={employee.id}
+                      name={employee.name}
+                      role={employee.role}
+                      img={employee.img}
+                      updateEmployee={updateEmployee}
+                    />
+                  );
+                })}
+              </div>
+            )}
+            <AddEmployee newEmployee={newEmployee} />
+          </div>
+        ) : (
+          <p>You do not have access</p>
+        )}
+      </div>
+    </>
   );
 }
 
