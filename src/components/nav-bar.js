@@ -11,7 +11,7 @@ function NavBar() {
         <Link className="nav-link" to="/home">
           <img
             className="max-w-[30%]"
-            src="https://www.veryicon.com/download/png/healthcate-medical/basic-linear-icon-library/user-staff?s=256"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlXgNnj_MXqYXGTa1jNTMHrGufNsFAInOzBQ&usqp=CAU"
           ></img>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

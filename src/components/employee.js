@@ -1,5 +1,6 @@
 import EditEmployee from "./edit-employee";
 import { useState, useEffect } from "react";
+import deleteHook from "../hooks/delete-hook";
 
 function Employee(props) {
   const [employees, setEmployees] = useState([]);
